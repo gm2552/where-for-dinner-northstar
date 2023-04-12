@@ -1,0 +1,20 @@
+apiVersion: services.apps.tanzu.vmware.com/v1alpha1
+kind: ResourceClaimPolicy
+metadata:
+  name: where-for-dinner-bitnami-redis-cross-namespace
+  namespace: service-instances
+spec:
+  consumingNamespaces:
+  - '*'
+  subject:
+    group: ""
+    kind: Secret
+---
+apiVersion: services.apps.tanzu.vmware.com/v1alpha1
+kind: ClassClaim
+metadata:
+  name: cache-where-for-dinner
+  namespace: workloads
+spec:
+  classRef:
+    name: bitnami-redis-where-for-dinner

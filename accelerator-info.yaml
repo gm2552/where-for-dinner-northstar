@@ -1,0 +1,46 @@
+id: 9826598f-5725-4bb7-a178-9afd3d969715
+timestamp: 2023-04-12T18:25:08Z
+username: gm2552
+source: TAP-GUI
+accelerator:
+  name: where2
+  git:
+    url: https://github.com/vmware-tanzu/application-accelerator-samples
+    subPath: where-for-dinner
+    ref:
+      branch: main
+    commit: 15513580e75b3239cf57194ac7e523f9b5ea625d
+fragments:
+  - name: build-wrapper-maven
+    source:
+      image: reg.perfect300rock.com/tanzu-application-platform/tap-packages@sha256:195a3ca6585fa91c41292584a19c2807c72ecdf986ce860a7147451e89d467d4
+  - name: tap-workload
+    source:
+      image: reg.perfect300rock.com/tanzu-application-platform/tap-packages@sha256:dbf0dedb6848ad8a7704c1c19465a1ddae9039b0e63c1dd0df3e2ed9cbda6093
+options:
+  appSSOName: appsso-where-for-dinner
+  appWorkloadURL: https://where-for-dinner.perfect300rock.com
+  bsGitBranch: main
+  bsGitRepository: github.com?owner=gm2552&repo=where-for-dinner-northstar
+  cacheName: cache-where-for-dinner
+  cacheType: redisCache
+  dbName: db-where-for-dinner
+  dbType: mysql
+  devDefaultAccountPassword: letseat
+  devDefaultAccountUsername: where-for-dinner
+  dynamicCache: false
+  dynamicDatabase: false
+  dynamicMsgBroker: false
+  enableCloudEvents: false
+  enableDefaultDevAccount: true
+  enableSecurity: true
+  gatewayName: gateway-where-for-dinner
+  gatewayType: tapscg
+  includeBuildToolWrapper: true
+  msgBrokerType: rabbitmq
+  msgbrokerName: msgbroker-where-for-dinner
+  numRabbitMQClusterNodes: 1
+  ployglotWorkloads: true
+  projectName: where-for-dinner-northstar
+  serviceNamespace: service-instances
+  workloadNamespace: workloads
