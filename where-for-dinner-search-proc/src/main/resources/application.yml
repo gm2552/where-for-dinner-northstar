@@ -125,7 +125,8 @@ spring:
       host: ${spring.redis.host}
       password: ${spring.redis.password}
       port: ${spring.redis.port}
-  
+      ssl: ${spring.redis.ssl}
+      
 management:
   health:
     redis:
