@@ -18,13 +18,13 @@ spring:
   sql.init.mode: ALWAYS 
   sql.init.platform: h2
 
-  cloud: 
+  cloud:
+    function:
+      definition: submittedSearches    
     stream:
       defaultBinder: rabbit
       poller:
         fixed-delay: ${where-for-dinner.searchEvent.period} 
-      function:
-        definition: submittedSearches
       bindings: 
         submittedSearches-out-0: 
           destination: where-for-dinner-search-criteria
